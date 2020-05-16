@@ -1,0 +1,57 @@
+
+# status bar theme
+
+#set -goq @green colour43
+green="colour37"
+grey1="colour238"
+grey2="colour236"
+grey3="colour234"
+orange="colour209"
+purple="colour141"
+
+
+set -g status-style "none"
+set -g status-style bg="$grey3"
+set -g status-justify "centre"
+set -g status-left-length "100"
+set -g status-right-length "100"
+set -g status-left-style "none"
+set -g status-right-style "none"
+
+
+set -g message-style "bg=$grey1, fg=$orange"
+set -g message-command-style "bg=$grey1, fg=$orange"
+
+set -g pane-border-style fg="$grey1"
+set -g pane-active-border-style fg="$green"
+
+setw -g window-status-style "none"
+setw -g window-status-style bg="$grey3"
+setw -g window-status-style fg="colour121"
+setw -g window-status-activity-style "none"
+setw -g window-status-activity-style "bg=white, fg=red"
+setw -g window-status-separator ""
+
+set -g status-left "\
+\#[fg=$grey1,bg=$grey1,nobold,nounderscore,noitalics]\
+\#[fg=$grey3,bg=$orange] #S \
+\#[fg=$orange,bg=$grey1] #W \
+\#[fg=$green,bg=$grey2] #(whoami) #(uptime | cut -d ',' -f 1 | cut -d ' ' -f 3,4,5,6) \
+\#[fg=$grey3,bg=$grey3,nobold,nounderscore,noitalics]"
+
+set -g status-right "\
+\#[fg=$grey,bg=$darkgrey,nobold,nounderscore,noitalics]\
+\#[fg=$green,bg=$grey2] %R  %a %d %Y \
+\#[fg=$orange,bg=$grey1] #h \
+\#[fg=$darkgrey,bg=$darkgrey,nobold,nounderscore,noitalics]"
+
+setw -g window-status-format "\
+\#[fg=$grey3,bg=$grey3,nobold,nounderscore,noitalics]\
+\#[fg=$green,bg=default] #I  #W \
+\#[fg=$darkgrey,bg=$darkgrey,nobold,nounderscore,noitalics]"
+
+setw -g window-status-current-format "\
+\#[fg=$orange,bg=$grey2] #I  #W  #F \
+\#[fg=$darkgrey,bg=$darkgrey,nobold,nounderscore,noitalics]"
+
+# Source: https://gist.github.com/rajanand02/9407361
