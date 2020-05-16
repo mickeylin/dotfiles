@@ -82,5 +82,5 @@ nmap <silent> f :noh<CR>
 " vim 切分頁
 nmap <silent> <C-D> gT
 nmap <silent> <C-F> gt
-"imap <silent> <C-D> <ESC>gT<ESC>a
+imap <silent> <C-D> <ESC>gT<ESC>a
 imap <silent> <C-F> <ESC>gt<ESC>a
