@@ -17,3 +17,11 @@
     command: vim -e -u vimrc -i NONE -c "PlugInstall" -c "qa" || true
     description: Installing vim plugins that defined in .vimrc
     stdout: true
+  -
+    command: curl -sL --proto-redir -all,https
+              https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+    description: Installing zplug from github, https://github.com/zplug/zplug
+  -
+    command: zsh -c "source ~/.zshrc"
+    description: Istalling zsh plugins that defined in .zshrc
+    stdout: true
