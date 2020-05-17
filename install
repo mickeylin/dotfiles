@@ -2,6 +2,11 @@
 
 set -e
 
+{ check_curl=$(curl --version 2> /dev/null); } || echo -e "\033[0;31mThis script need curl, please install it\033[0m"
+{ check_awk=$(awk --version 2> /dev/null); } || echo -e "\033[0;31mThis script need FreeBSD awk or gawk, not mawk\033[0m"
+
+[[ -n "$check_curl" && -n "$check_awk" ]] ||  exit
+
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
 
