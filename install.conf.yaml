@@ -12,14 +12,19 @@
                https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     description: Installing vim-plug from github, https://github.com/junegunn/vim-plug
   -
-    command: vim -e -u vimrc -i NONE -c "PlugInstall" -c "qa" || true
+    command: vim -es -u vimrc -i NONE -c "PlugInstall" -c "qa" || true
     description: Installing vim plugins that defined in .vimrc
-    stdout: true
+    stderr: true
   -
     command: curl -sL --proto-redir -all,https
               https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
     description: Installing zplug from github, https://github.com/zplug/zplug
+    stdout: true
   -
-    command: zsh -c "source ~/.zshrc"
+    command: zsh -c "sleep 10; source ~/.zshrc"
     description: Istalling zsh plugins that defined in .zshrc
+    stdout: true
+    stderr: true
+  -
+    command: echo -e "\033[0;36mUse chsh to cahgne shell and type \"p10k configure\" to configure theme of powerlevel10k\033[0m"
     stdout: true
