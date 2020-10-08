@@ -13,7 +13,7 @@ zplug "romkatv/powerlevel10k", as:theme
 zplug "chrissicool/zsh-256color"
 # zplug "plugins/git", from:oh-my-zsh
 zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "zsh-users/zsh-autosuggestions"
 
 # Install plugins using dotbot's install script
@@ -40,8 +40,10 @@ bindkey "^[[A"    history-substring-search-up
 bindkey "^[[B"    history-substring-search-down
 bindkey "^[[1~"   beginning-of-line
 bindkey "^[[7~"   beginning-of-line
+bindkey "^[[H"    beginning-of-line
 bindkey "^[[8~"   end-of-line
 bindkey "^[[4~"   end-of-line
+bindkey "^[[F"    end-of-line
 bindkey "^[[3~"   delete-char
 
 
